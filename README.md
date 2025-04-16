@@ -10,54 +10,10 @@
 ## Install
 
 ```shell
-npm install json-server
+npm install
 ```
 
 ## Usage
-
-Create a `db.json` or `db.json5` file
-
-```json
-{
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
-  ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
-}
-```
-
-<details>
-
-<summary>View db.json5 example</summary>
-
-```json5
-{
-  posts: [
-    { id: '1', title: 'a title', views: 100 },
-    { id: '2', title: 'another title', views: 200 },
-  ],
-  comments: [
-    { id: '1', text: 'a comment about post 1', postId: '1' },
-    { id: '2', text: 'another comment about post 1', postId: '1' },
-  ],
-  profile: {
-    name: 'typicode',
-  },
-}
-```
-
-You can read more about JSON5 format [here](https://github.com/json5/json5).
-
-</details>
-
-Pass it to JSON Server CLI
 
 ```shell
 $ npx json-server db.json
@@ -75,32 +31,6 @@ $ curl http://localhost:3000/posts/1
 ```
 
 Run `json-server --help` for a list of options
-
-## Sponsors ✨
-
-| Sponsors |
-| :---: |
-| <a href="https://mockend.com/" target="_blank"><img src="https://jsonplaceholder.typicode.com/mockend.svg" height="100px"></a> |
-| <a href="https://zuplo.link/json-server-gh"><img src="https://github.com/user-attachments/assets/adfee31f-a8b6-4684-9a9b-af4f03ac5b75" height="100px"></a> |
-
-| Sponsors |
-| :---: |
-| <a href="https://konghq.com/products/kong-konnect?utm_medium=referral&utm_source=github&utm_campaign=platform&utm_content=json-server"><img src="https://github.com/typicode/json-server/assets/5502029/e8d8ecb2-3c45-4f60-92d0-a060b820fa7f" height="75px"></a> |
-
-| Sponsors | |
-| :---: | :---: |
-| <a href="https://www.storyblok.com/" target="_blank"><img src="https://github.com/typicode/json-server/assets/5502029/c6b10674-4ada-4616-91b8-59d30046b45a" height="35px"></a> | <a href="https://betterstack.com/" target="_blank"><img src="https://github.com/typicode/json-server/assets/5502029/44679f8f-9671-470d-b77e-26d90b90cbdc" height="35px"></a> |
-| <a href="https://route4me.com"><img src="https://github.com/user-attachments/assets/4eab0bac-119e-4b27-8183-8b136190b776" height="35px" alt="Delivery Routing Software and Route Optimization Software"></a> | <a href="https://www.speechanddebate.org"><img src="https://github.com/user-attachments/assets/cc7980e4-2147-4499-8de4-4d0c265d0c07" height="35px"></a> |
-
-
-[Become a sponsor and have your company logo here](https://github.com/users/typicode/sponsorship)
-
-## Sponsorware
-
-> [!NOTE]
-> This project uses the [Fair Source License](https://fair.io/). Only organizations with 3+ users are kindly asked to contribute a small amount through sponsorship [sponsor](https://github.com/sponsors/typicode) for usage. __This license helps keep the project sustainable and healthy, benefiting everyone.__
->
-> For more information, FAQs, and the rationale behind this, visit [https://fair.io/](https://fair.io/).
 
 ## Routes
 
@@ -201,9 +131,3 @@ You can also add custom directories using `-s/--static` option.
 json-server -s ./static
 json-server -s ./static -s ./node_modules
 ```
-
-## Notable differences with v0.17
-
-- `id` is always a string and will be generated for you if missing
-- use `_per_page` with `_page` instead of `_limit`for pagination
-- use Chrome's `Network tab > throtling` to delay requests instead of `--delay` CLI option
